@@ -12,7 +12,10 @@
     </Window.Resources>
     <Grid DataContext="{StaticResource mainVM}">
         <hx:Viewport3DX BackgroundColor="0,0,0,1">
-            <hx:DirectionalLight3D Color="{Binding LightColor}" Direction="-10,-10,-10"/>
+            <hx:DirectionalLight3D Color="{Binding LightColor}" Direction="-10, -10, -10"/>
+            <hx:DirectionalLight3D Color="{Binding LightColor}" Direction="-10, -10, 10"/>
+            <hx:DirectionalLight3D Color="{Binding LightColor}" Direction="-10, 10,-10"/>
+            <hx:DirectionalLight3D Color="{Binding LightColor}" Direction="0,-10,0"/>
             <hx:MeshGeometryModel3D Geometry="{Binding Model}" Material="{Binding Material}"/>
         </hx:Viewport3DX>
     </Grid>
