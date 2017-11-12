@@ -1,0 +1,19 @@
+﻿<Window x:Class="ExtrudedTextHelixSharpDX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExtrudedTextHelixSharpDX"
+        xmlns:hx="http://helix-toolkit.org/wpf/SharpDX"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:MainViewModel x:Key="mainVM"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource mainVM}">
+        <hx:Viewport3DX BackgroundColor="0,0,0,1">
+            <hx:DirectionalLight3D Color="{Binding LightColor}" Direction="-10,-10,-10"/>
+            <hx:MeshGeometryModel3D Geometry="{Binding Model}" Material="{Binding Material}"/>
+        </hx:Viewport3DX>
+    </Grid>
+</Window>
